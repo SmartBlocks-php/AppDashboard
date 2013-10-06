@@ -25,7 +25,7 @@ define([
             var apps = SmartBlocks.Data.apps;
             for (var k in apps.models) {
                 var app = apps.models[k];
-                if (!app.get('dashboard_ignore'))
+                if (app.get("token") != "app_organizer")
                     base.$el.find(".apps_menu_container").append('<li class="app_link"><a href="#' + app.get('token') + '">' + app.get('name') + '</a></li>');
             }
         },
@@ -57,10 +57,6 @@ define([
                 e.preventDefault();
                 var elt = $(this);
                 window.location = elt.attr("href");
-                setTimeout(function () {
-                    base.hide();
-                },400);
-
             });
 
             base.$el.delegate(".button", "click", function () {

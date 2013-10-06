@@ -5,5 +5,14 @@
     "types": [
     ],
     "apps": [
+        {
+            "name": "App organizer",
+            "token": "app_organizer",
+            "description": "entry point",
+            "link": "#",
+            "logo_url": "/images/icons/user.png",
+            "block_token": "kernel",
+            "entry_point": "AppDashboard/apps/dashboard/Views/Dashboard"
+        }
     ]
 }
