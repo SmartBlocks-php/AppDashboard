@@ -2,8 +2,9 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    './apps/menu/views/main'
-], function ($, _, Backbone, MenuView) {
+    './apps/menu/views/main',
+    './apps/dashboard/Views/Dashboard'
+], function ($, _, Backbone, MenuView, Dashboard) {
     var main = {
         init: function () {
             var base = this;
@@ -21,6 +22,12 @@ define([
                     base.menu_view.show();
                 }
             });
+        },
+        launch_organizer: function (app) {
+            var base = this;
+            var dashboard = new Dashboard();
+            SmartBlocks.Methods.render(dashboard.$el);
+            dashboard.init(app);
         }
     };
     return main;
