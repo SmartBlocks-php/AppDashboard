@@ -15,6 +15,8 @@ define([
 
             base.render();
             base.registerEvents();
+
+
         },
         render: function () {
             var base = this;
@@ -56,7 +58,13 @@ define([
             base.$el.delegate("a", "click", function (e) {
                 e.preventDefault();
                 var elt = $(this);
-                window.location = elt.attr("href");
+                $("#container").fadeOut(200, function () {
+                    window.location = elt.attr("href");
+
+                    $("#container").fadeIn(200, function () {
+                        base.hide();
+                    });
+                });
             });
 
             base.$el.delegate(".button", "click", function () {
@@ -65,6 +73,9 @@ define([
                 } else {
                     base.show();
                 }
+            });
+            $("#container").click(function () {
+                base.hide();
             });
         }
     });

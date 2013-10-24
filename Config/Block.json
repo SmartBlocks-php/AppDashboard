@@ -1,5 +1,5 @@
 {
-    "name": "App Dashboard",
+    "name": "AppDashboard",
     "token": "app_dashboard",
     "main": "AppDashboard/main",
     "types": [

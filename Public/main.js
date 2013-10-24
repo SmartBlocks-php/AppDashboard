@@ -10,7 +10,7 @@ define([
             var base = this;
 
             base.menu_view = new MenuView();
-            $("#top_content").append(base.menu_view.$el);
+            $("body").prepend(base.menu_view.$el);
             base.menu_view.init();
 
             SmartBlocks.Shortcuts.add([
