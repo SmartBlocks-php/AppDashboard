@@ -30,6 +30,14 @@ define([
                 if (app.get("token") != "app_organizer")
                     base.$el.find(".apps_menu_container").append('<li class="app_link"><a href="#' + app.get('token') + '">' + app.get('name') + '</a></li>');
             }
+            $(".menu_handle").remove();
+            var handle = $(document.createElement('div'));
+            handle.addClass("menu_handle");
+            handle.html('<div>Show menu <i class="fa fa-align-justify fa-2x"></i></div>');
+//            $("body").prepend(handle);
+            $("body").delegate(".menu_handle", 'click', function () {
+                base.show();
+            });
         },
         show: function () {
             var base = this;
@@ -39,6 +47,7 @@ define([
             $("body").animate({
                 'left': 250
             }, 200);
+            $(".menu_handle").hide();
         },
         hide: function () {
             var base = this;
@@ -50,8 +59,10 @@ define([
                 'left': 0
             }, 200, function () {
                 $("body").css("position", "relative");
-                $("body").css("overflow", "hidden");
+                $("body").css("overflow-x", "hidden");
+                $(".menu_handle").show();
             });
+
         },
         registerEvents: function () {
             var base = this;

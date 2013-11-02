@@ -28,7 +28,7 @@
       box-shadow: inset 0px 0px 10px black;
     }
 
-    &:active{
+    &:active {
       background: #323233;
       box-shadow: inset 0px 0px 10px black;
     }
@@ -47,5 +47,30 @@
       background: gray;
 
     }
+  }
+}
+
+.menu_handle {
+  position: fixed;
+  width: 150px;
+  height: 25px;
+  color: white;
+
+  text-align: right;
+  background: #3b3b3b;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: -121px;
+  transition: all 0.5s;
+  top: 50px;
+  z-index: 2000;
+  opacity: 0.5;
+  padding: 5px;
+  > div {
+    line-height: 25px;
+  }
+  &:hover {
+    opacity: 1;
+    margin-left: -45px;
   }
 }
