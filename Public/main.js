@@ -28,6 +28,10 @@ define([
             var dashboard = new Dashboard();
             SmartBlocks.Methods.render(dashboard.$el);
             dashboard.init(app);
+        },
+        showMenu: function () {
+            var base = this;
+            base.menu_view.show();
         }
     };
     return main;
