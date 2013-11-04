@@ -27,7 +27,7 @@ define([
             var apps = SmartBlocks.Data.apps;
             for (var k in apps.models) {
                 var app = apps.models[k];
-                if (app.get("token") != "app_organizer")
+                if (app.get("token") != "app_organizer" && !app.get("menu_ignore"))
                     base.$el.find(".apps_menu_container").append('<li class="app_link"><a href="#' + app.get('token') + '">' + app.get('name') + '</a></li>');
             }
             $(".menu_handle").remove();
