@@ -32,6 +32,13 @@ define([
         showMenu: function () {
             var base = this;
             base.menu_view.show();
+        },
+        toggleMenu: function () {
+            var base = this;
+            if (base.menu_view.$el.width() <= 0)
+                base.menu_view.show();
+            else
+                base.menu_view.hide();
         }
     };
     return main;
