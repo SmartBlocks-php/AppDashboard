@@ -47,7 +47,7 @@ define([
             $("body").animate({
                 'left': 250
             }, 200);
-            $(".menu_handle").hide();
+            $("#inner_container").addClass("shadowed");
         },
         hide: function () {
             var base = this;
@@ -61,6 +61,7 @@ define([
                 $("body").css("position", "relative");
                 $("body").css("overflow-x", "hidden");
                 $(".menu_handle").show();
+                $("#inner_container").removeClass("shadowed");
             });
 
         },
