@@ -35,10 +35,11 @@ define([
         },
         toggleMenu: function () {
             var base = this;
-            if (base.menu_view.$el.width() <= 0)
-                base.menu_view.show();
-            else
+            if (base.menu_view.$el.width() > 10) {
                 base.menu_view.hide();
+            } else {
+                base.menu_view.show();
+            }
         }
     };
     return main;
