@@ -17,9 +17,24 @@ define([
                 27
             ], function () {
                 if (base.menu_view.$el.width() > 10) {
-                    base.menu_view.hide();
+                    base.menu_view.hide(function () {
+                        $('.show_left_menu_button').html('<i class="fa  fa-caret-square-o-right"></i>');
+                    });
                 } else {
-                    base.menu_view.show();
+                    base.menu_view.show(function () {
+                        $('.show_left_menu_button').html('<i class="fa  fa-caret-square-o-left"></i>');
+                    });
+                }
+            });
+            $('body').delegate('.show_left_menu_button', 'click', function () {
+                if (base.menu_view.$el.width() > 10) {
+                    base.menu_view.hide(function () {
+                        $('.show_left_menu_button').html('<i class="fa  fa-caret-square-o-right"></i>');
+                    });
+                } else {
+                    base.menu_view.show(function () {
+                        $('.show_left_menu_button').html('<i class="fa  fa-caret-square-o-left"></i>');
+                    });
                 }
             });
         },

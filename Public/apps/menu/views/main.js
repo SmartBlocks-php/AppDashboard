@@ -39,21 +39,27 @@ define([
                 base.show();
             });
         },
-        show: function () {
+        show: function (callback) {
             var base = this;
             base.$el.animate({
                 width: 250
-            }, 200);
+            }, 200, function () {
+                if (callback)
+                    callback();
+            });
             $("body").animate({
                 'left': 250
             }, 200);
             $("#inner_container").addClass("shadowed");
         },
-        hide: function () {
+        hide: function (callback) {
             var base = this;
             base.$el.animate({
                 width: 0
-            }, 200);
+            }, 200, function () {
+                if (callback)
+                    callback();
+            });
 
             $("body").animate({
                 'left': 0
