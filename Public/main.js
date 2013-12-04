@@ -26,17 +26,33 @@ define([
                     });
                 }
             });
-            $('body').delegate('.show_left_menu_button', 'click', function () {
+            var timer = 0;
+            $('body').delegate('.show_left_menu_button', 'mouseover', function () {
                 if (base.menu_view.$el.width() > 10) {
-                    base.menu_view.hide(function () {
-                        $('.show_left_menu_button').html('<i class="fa  fa-caret-square-o-right"></i>');
-                    });
+
                 } else {
                     base.menu_view.show(function () {
                         $('.show_left_menu_button').html('<i class="fa  fa-caret-square-o-left"></i>');
                     });
+                    clearTimeout(timer);
+                    timer = setTimeout(function () {
+                        base.menu_view.hide(function () {
+                            $('.show_left_menu_button').html('<i class="fa  fa-caret-square-o-right"></i>');
+                        });
+                    }, 500);
                 }
             });
+            $('body').delegate('.apps_menu', 'mouseover', function () {
+                clearTimeout(timer);
+            });
+            $('body').delegate('.apps_menu', 'mouseout', function () {
+                timer = setTimeout(function () {
+                    base.menu_view.hide(function () {
+                        $('.show_left_menu_button').html('<i class="fa  fa-caret-square-o-right"></i>');
+                    });
+                }, 500);
+            });
+
         },
         launch_organizer: function (app) {
             var base = this;
