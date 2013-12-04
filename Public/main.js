@@ -53,6 +53,12 @@ define([
                 }, 500);
             });
 
+            SmartBlocks.Shortcuts.add([
+                17, 72
+            ], function () {
+                window.location = "#";
+            });
+
         },
         launch_organizer: function (app) {
             var base = this;

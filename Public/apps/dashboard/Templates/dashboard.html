@@ -1,8 +1,61 @@
 <div class="control_bar">
-    <a href="javascript:void(0);" class="me">Dashboard</a>
-    <h2>SmartBlocks</h2>
+    <a href="javascript:void(0);" onclick="" class="show_left_menu_button"><i class="fa  fa-caret-square-o-right "></i></a>
+    <a href="javascript:void(0);" class="me">Home</a>
+
     <div class="clearer"></div>
 </div>
 <div class="apps_container">
 
 </div>
+<% if (!SmartBlocks.current_user.get('id')) { %>
+        <div class="clearer"></div>
+<div class="form_container">
+    <div class="information">
+        <i class="fa fa-info-circle"></i> <br/>If you aren't already a member on this site, register below :
+    </div>
+    <form action="/Users/selfCreate" role="form">
+        <div class="form-group">
+            <label>
+                Username :
+            </label>
+                <input type="text" class="form-control" name="name"/>
+
+        </div>
+
+        <div class="form-group">
+            <label>
+                Email :
+            </label>
+                <input type="email" class="form-control" name="email"/>
+
+        </div>
+
+        <div class="form-group">
+            <label>
+                Password :
+            </label>
+                <input type="password" role="password" class="form-control" name="password"/>
+
+        </div>
+
+        <div class="form-group">
+            <label>
+                Firstname :
+            </label>
+                <input type="text" class="form-control" name="firstname"/>
+
+        </div>
+
+        <div class="form-group">
+            <label>
+                Lastname :
+            </label>
+                <input type="text" class="form-control" name="lastname"/>
+
+        </div>
+        <div>
+            <input type="submit" value="Register" class="btn btn-default" />
+        </div>
+    </form>
+</div>
+<% } %>

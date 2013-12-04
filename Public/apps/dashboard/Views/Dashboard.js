@@ -40,6 +40,7 @@ define([
                     thumbnail.init();
                 }
             }
+
         },
         initializeEvents: function () {
             var base = this;
@@ -49,24 +50,27 @@ define([
                 }
             });
 
-            base.$el.delegate(".app_info_button", "click", function (e) {
-                var elt = $(this).parent();
-                e.stopPropagation();
-                if (elt.attr("data-flip") == 0) {
-                    var flipDir = 'rl';
-                    elt.flip({
-                        direction: flipDir,
-                        color: elt.css("background-color"),
-                        content: '<div class="desc_title">Description :</div><div class="description">' + elt.attr("data-description") + '</div><div class="app_info_button"><img src="/images/icons/arrow_undo.png" /></div>',
-                        speed: 100
-                    });
-                    elt.attr("data-flip", 1);
-                }
-                else {
-                    elt.revertFlip();
-                    elt.attr("data-flip", 0);
-                }
-            });
+//            base.$el.delegate(".app_info_button", "click", function (e) {
+//                var elt = $(this).parent();
+//                e.stopPropagation();
+//                if (elt.attr("data-flip") == 0) {
+//                    var flipDir = 'rl';
+//                    elt.flip({
+//                        direction: flipDir,
+//                        color: "#eaeaea",
+//                        content: '<div class="desc_title">Description :</div><div class="description">' + elt.attr("data-description") + '</div><div class="app_info_button"><i class="fa fa-arrow-circle-left  "></i></div>',
+//                        speed: 100
+//                    });
+//                    elt.attr("data-flip", 1);
+//                }
+//                else {
+//                    elt.revertFlip({
+//                        color: "#eaeaea",
+//                        speed: 100
+//                    });
+//                    elt.attr("data-flip", 0);
+//                }
+//            });
             base.$el.find(".nameLink").click(function (e) {
                 e.stopPropagation();
             });

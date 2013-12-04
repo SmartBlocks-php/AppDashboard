@@ -3,12 +3,12 @@
          data-description="<%= app.get('description') %>" data-link="<%= app.get('link') %>">
         <a class="nameLink" href="<%= app.get('link') %>"><%= app.get('name') %></a>
 
-        <div>
-            <!--<img class="appLogo" alt="logo" src="<%= app.get('logo_url') %>"/>-->
+        <div class="description">
+            <%= app.get('description') %>
         </div>
 
-        <a href="javascript:void(0);" class="app_info_button">
-            <!--<img src="/images/icons/information.png" />-->
-        </a>
+        <!--<a href="javascript:void(0);" class="app_info_button">-->
+            <!--<i class="fa fa-info-circle"></i>-->
+        <!--</a>-->
     </div>
 </a>
